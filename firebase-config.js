@@ -5,11 +5,12 @@
  * The public website runs in offline preview mode until this object is configured.
  */
 window.ANANTA_FIREBASE_CONFIG = window.ANANTA_FIREBASE_CONFIG || {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyBfmm4RSOckkFvAFMWrTPuF38koEz2kAkE",
+  authDomain: "yukti-247.firebaseapp.com",
+  databaseURL: "https://yukti-247-default-rtdb.firebaseio.com",
+  projectId: "yukti-247",
+  storageBucket: "yukti-247.firebasestorage.app",
+  messagingSenderId: "244123454826",
+  appId: "1:244123454826:web:56b4d88c3628bb06cfa913",
+  measurementId: "G-6BGFCBKTD7"
 };
