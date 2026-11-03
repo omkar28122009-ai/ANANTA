@@ -1,0 +1,64 @@
+{
+  "rules": {
+    "ananta": {
+      "public": {
+        ".read": true,
+        ".write": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+      },
+      "studio": {
+        "roles": {
+          ".read": "auth != null && root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin'",
+          "$uid": {
+            ".write": "auth != null && root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin'"
+          }
+        },
+        "roleLookup": {
+          "$uid": {
+            ".read": "auth != null && (auth.uid === $uid || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin')",
+            ".write": "auth != null && root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin'"
+          }
+        },
+        "articles": {
+          ".read": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+          ".write": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+        },
+        "authorDrafts": {
+          "$uid": {
+            ".read": "auth != null && (auth.uid === $uid && root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'author' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+            "$articleId": {
+              ".write": "auth != null && ((auth.uid === $uid && root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'author' && ((!newData.exists() && data.child('status').val() === 'draft' && data.child('authorUid').val() === auth.uid) || (newData.child('status').val() === 'draft' && newData.child('authorUid').val() === auth.uid))) || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+            }
+          }
+        },
+        "authorDraftIndex": {
+          ".read": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+          "$uid": {
+            "$articleId": {
+              ".write": "auth != null && ((auth.uid === $uid && root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'author' && ((!newData.exists() && data.child('status').val() === 'draft' && data.child('authorUid').val() === auth.uid) || (newData.child('status').val() === 'draft' && newData.child('authorUid').val() === auth.uid))) || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+            }
+          }
+        },
+        "categories": {
+          ".read": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+          ".write": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+        },
+        "pages": {
+          ".read": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+          ".write": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+        },
+        "settings": {
+          ".read": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+          ".write": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+        },
+        "media": {
+          ".read": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+          ".write": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+        },
+        "revisions": {
+          ".read": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')",
+          ".write": "auth != null && (root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'admin' || root.child('ananta/studio/roles').child(auth.uid).child('role').val() === 'editor')"
+        }
+      }
+    }
+  }
+}

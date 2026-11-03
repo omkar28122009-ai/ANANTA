@@ -1,0 +1,140 @@
+/* ANANTA v3.4 — deployment hardening + readable mobile editorial UI */
+:root { --ananta-focus: rgba(142,136,221,.26); }
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:3px solid var(--ananta-focus); outline-offset:2px; }
+.firebase-setup-warning{margin:14px 0;padding:14px 15px;border:1px solid rgba(190,145,84,.34);border-radius:14px;background:linear-gradient(135deg,rgba(245,231,205,.38),rgba(229,225,255,.30));color:var(--ink);font-size:13px;line-height:1.65}
+.firebase-setup-warning[hidden]{display:none!important}
+.login-card button:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+.brand-mark-fallback{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;line-height:0}
+.brand-mark-svg{display:block;max-width:100%;height:auto}
+.article-reference-section{margin-top:42px}
+.source-list{display:grid;gap:10px;padding:12px;border-radius:18px}
+.source-item{border:1px solid var(--line);border-radius:13px;padding:14px 15px;background:var(--page)}
+.source-item:last-child{border-bottom:1px solid var(--line)}
+.article-copy{min-width:0;overflow-wrap:anywhere}
+.article-copy img{max-width:100%;height:auto;border-radius:14px}
+.story-image,.featured-image,.article-cover-image{max-width:none}
+.admin-main{font-size:14px}
+.admin-main .field-help{font-size:11px;line-height:1.65}
+.admin-main .field label{font-size:11px}
+.admin-main .field input,.admin-main .field select,.admin-main .field textarea{font-size:14px}
+.admin-table th{font-size:10px}
+.admin-table td{font-size:12px}
+.admin-table td strong{font-size:13px}
+.admin-nav-label{font-size:10px!important}
+.admin-nav-item{font-size:13px}
+.admin-nav-item .admin-nav-label-text{font-size:13px}
+.metric-card small{font-size:10px}
+.metric-card strong{font-size:34px}
+.admin-welcome p{font-size:13px;line-height:1.65}
+.admin-card-head h2{font-size:20px}
+.admin-topbar .admin-title{font-size:16px}
+.admin-topbar .admin-subtitle{font-size:9px}
+.admin-user .btn{font-size:11px;min-height:38px}
+.admin-role{font-size:9px}
+@media(max-width:1080px){
+  .admin-layout{display:block}
+  .admin-main{width:100%;max-width:none}
+}
+@media(max-width:760px){
+  .container{width:calc(100% - 32px)}
+  .listing-tools{grid-template-columns:minmax(0,1fr);gap:10px;padding:12px}
+  .listing-sort-control{display:grid;grid-template-columns:70px minmax(0,1fr);align-items:center;gap:8px}
+  .listing-sort-control>span{font-size:10px;letter-spacing:.1em}
+  .listing-select{width:100%;min-width:0;height:46px;font-size:13px}
+  .search-inline{min-height:48px}
+  .search-inline input{font-size:14px}
+  .filter-row{gap:8px;padding:3px 0 12px}
+  .filter-chip{min-height:40px;font-size:11px;padding:0 14px}
+  .listing-results-head .small-caps{font-size:10px}
+  .article-top{width:calc(100% - 32px);padding:34px 0 12px}
+  .article-title{font-size:clamp(33px,8.8vw,46px);line-height:1.06;overflow-wrap:anywhere}
+  .article-excerpt{font-size:14px;line-height:1.72}
+  .article-byline{font-size:11px;gap:8px 10px;flex-wrap:wrap}
+  .article-cover{width:calc(100% - 32px);height:clamp(175px,56vw,265px);margin:16px auto 18px;border-radius:17px}
+  .article-control-wrap{width:calc(100% - 32px);display:grid;grid-template-columns:minmax(0,1fr);gap:9px;margin:0 auto 17px}
+  .article-language-switch{display:flex;align-items:center;flex-wrap:wrap;width:100%;gap:6px;padding:7px;border-radius:14px}
+  .language-label{font-size:10px;padding:0 5px}
+  .language-choice{min-height:39px;padding:0 14px;font-size:12px}
+  .language-caption{display:block;flex:1 1 100%;margin:0 5px 1px;font-size:10px}
+  .article-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%;padding:7px;border-radius:15px}
+  .article-tool{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:7px;min-width:0;min-height:44px;padding:7px 5px;border:1px solid var(--line);border-radius:11px;font-size:11px;white-space:nowrap}
+  .article-tool .ui-icon{width:16px;height:16px;flex:0 0 16px}
+  .article-tool-compact span{font-size:11px}
+  .language-notice{width:calc(100% - 32px);font-size:12px;line-height:1.55}
+  .article-layout{width:calc(100% - 32px);max-width:760px;margin:0 auto;display:block}
+  .article-copy{font-size:16px;line-height:1.82;letter-spacing:-.01em}
+  .article-copy h2{font-size:clamp(25px,7vw,31px);line-height:1.15;margin:1.4em 0 .55em}
+  .article-copy h3{font-size:20px;line-height:1.25}
+  .article-copy blockquote{font-size:18px;line-height:1.5;margin:22px 0;padding:16px}
+  .article-reference-section{margin-top:34px;padding-top:20px}
+  .article-reference-section h2{font-size:27px}
+  .article-reference-section>p{font-size:13px;line-height:1.6}
+  .source-list{padding:9px;gap:8px}
+  .source-item{padding:13px 12px}
+  .source-item a{font-size:13px;line-height:1.45}
+  .source-item small{font-size:11px;line-height:1.5}
+  .admin-topbar{height:66px;padding:0 12px;gap:8px}
+  .admin-top-left{gap:8px;min-width:0}
+  .admin-top-left>.brand{gap:7px;flex:0 1 auto;min-width:0}
+  .admin-top-left .brand-icon-image,.admin-top-left .brand-mark-fallback{width:34px;height:34px;flex-basis:34px}
+  .admin-top-left .brand-word{font-size:13px;letter-spacing:.11em}
+  .admin-top-left .brand-line{display:none}
+  .admin-title{font-size:15px!important}
+  .admin-subtitle{font-size:8px!important;letter-spacing:.06em;white-space:nowrap}
+  .admin-user{gap:6px;flex:0 0 auto}
+  .admin-role{font-size:9px;padding:6px 8px}
+  .admin-user>span:not(.admin-role){display:none}
+  .admin-user .btn{min-height:36px;padding:0 10px;font-size:10px}
+  .admin-layout{min-height:calc(100dvh - 66px)}
+  .admin-sidebar{top:66px;width:min(310px,88vw);height:calc(100dvh - 66px);max-height:calc(100dvh - 66px)}
+  .admin-sidebar-scrim{top:66px;height:calc(100dvh - 66px)}
+  .mobile-admin-menu{width:38px;height:38px;flex:0 0 38px}
+  .admin-main{padding:16px 13px 48px;font-size:14px}
+  .admin-welcome{padding:20px 17px;margin-bottom:14px}
+  .admin-welcome h1{font-size:29px;line-height:1.12}
+  .admin-welcome p{font-size:13px;line-height:1.65}
+  .admin-welcome .btn{width:100%;min-height:46px;font-size:12px}
+  .metric-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .metric-card{padding:15px 13px;border-radius:15px}
+  .metric-card small{font-size:9px;letter-spacing:.1em}
+  .metric-card strong{font-size:30px;margin-top:6px}
+  .admin-two-col{grid-template-columns:minmax(0,1fr);gap:12px}
+  .admin-card{padding:17px 14px;border-radius:17px;margin-bottom:13px}
+  .admin-card-head{align-items:center;gap:8px}
+  .admin-card h2,.admin-card-head h2{font-size:20px}
+  .admin-main .field-help{font-size:11px}
+  .admin-main .field label{font-size:11px}
+  .admin-main .field input,.admin-main .field select,.admin-main .field textarea{font-size:14px;min-height:47px}
+  .admin-nav-label{font-size:10px!important;padding:15px 12px 7px!important}
+  .admin-nav-item{min-height:48px;padding:11px 12px;font-size:13px}
+  .admin-nav-item .admin-nav-label-text{font-size:13px}
+  .admin-table{min-width:610px}
+  .admin-table th{font-size:10px;padding:12px 10px}
+  .admin-table td{font-size:12px;padding:13px 10px}
+  .admin-table td strong{font-size:13px}
+  .admin-form-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+  .admin-actions{display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch}
+  .admin-actions>.btn,.admin-actions-group .btn{width:100%;min-height:44px;font-size:12px}
+  .page-designer-layout,.editor-workspace{grid-template-columns:minmax(0,1fr);gap:12px}
+  .page-live-preview,.article-live-preview{width:100%;max-width:100%;min-width:0}
+  .page-preview-content h2{font-size:27px}
+  .calendar-grid{grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+  .calendar-day{min-height:49px;padding:4px;font-size:9px}
+  .field-help{font-size:11px;line-height:1.6}
+}
+@media(max-width:390px){
+  .nav-inner{width:calc(100% - 22px)}
+  .nav-actions .icon-btn{width:37px;height:37px;min-height:37px}
+  .brand-word{font-size:15px}
+  .article-tools{gap:5px;padding:6px}
+  .article-tool{font-size:10px;gap:5px;min-height:43px}
+  .admin-topbar{padding:0 8px;gap:5px}
+  .admin-top-left{gap:5px}
+  .admin-top-left .brand-word{font-size:11px}
+  .admin-top-left .brand-icon-image,.admin-top-left .brand-mark-fallback{width:30px;height:30px;flex-basis:30px}
+  .admin-title{font-size:14px!important}
+  .admin-subtitle{font-size:7px!important}
+  .admin-user .btn{padding:0 8px;font-size:9px}
+  .admin-role{font-size:8px;padding:5px 6px}
+}
+@media(prefers-reduced-motion:reduce){.mobile-drawer .drawer-panel,.admin-sidebar{transition:none!important}}
